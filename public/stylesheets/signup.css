@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+html *,
+body * {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+body {
+    /* font-family: -apple-system,BlinkMacSystemFont; */
+    font-family: -apple-technique, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    /* font-family: 'Gloria Hallelujah', cursive; */
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    background-color: #fafafa;
+    /* height: calc(100vh - 56px); */
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: #fafafa;
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 18px;
+    font-weight: 500;
+    text-align: center;
+    border-top: 1px solid #dbdbdb;
+}
+
+footer a {
+    font-family: 'Gloria Hallelujah', cursive;
+    color: inherit;
+    text-decoration: none;
+    background-color: #fafafa;
+}
+
+.mainConteiner {
+    width: 975px;
+    height: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+.loginConteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginContent {
+    max-width: 350px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.createAccountContent{
+    max-width: 350px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+.createAccountContent p{
+    margin: 15px;
+    font-size: 14px;
+}
+.createAccountContent a{
+    color: #0093f5;
+    font-weight: 600;
+}
+.loginContent h1 {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 32px;
+    line-height: 51px;
+    margin-top: 22px;
+    text-align: center;
+}
+.loginContent h2{
+    font-size: 17px;
+    color: #8e8e8e;
+    text-align: center;
+    margin: 20px 40px 10px;
+}
+.loginContent h4{
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px 60px;
+    color: #8e8e8e;
+    font-weight: 400;
+    text-align: center;
+}
+.loginContent a{
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 10px;
+    color: #0093f5;
+}
+
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.formLogin input{
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    margin: 0px 40px 6px 40px;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 9px;
+}
+
+.formLogin input::placeholder{
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+.formLogin input:first-child{
+    margin-top: 24px;
+}
+
+.formLogin button{
+    margin: 8px 40px;
+    background-color: #0093f5cc;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 5px 9px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.line{
+    stroke-width:2;
+    stroke:#dbdbdb;
+    height:5px;
+}
+
+.orLine p{
+    display:flex;
+    margin: 0px 18px;
+    color: #8e8e8e;
+    font-size: 13px;
+    line-height: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.orLine{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 12px 40px 18px;
+}
+
+
+  
+  
