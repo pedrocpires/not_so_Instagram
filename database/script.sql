@@ -18,13 +18,14 @@ INSERT INTO user VALUES(
     null,
     'Pedro Pires',
     'pedro@email.com',
-    'pedro'
+    'pedro',
     'senha1234',
     null,
     null,
     '2020-04-21',
     null
 );
+
 INSERT INTO user VALUES(
     null,
     'Viniciu Ravelli',

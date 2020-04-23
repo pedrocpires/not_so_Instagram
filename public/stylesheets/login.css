@@ -181,7 +181,13 @@ footer a {
     align-items: center;
     padding: 12px 40px 18px;
 }
-
-
+.loginError{
+    width: 100%;
+    padding: 10px 40px;
+    color: #ed4956;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+}
   
   

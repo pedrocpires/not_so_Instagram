@@ -18,10 +18,10 @@
             <div class="loginConteiner">
                 <div class="loginContent">
                     <h1>not_so_Instagram</h1>
-                    <form action="" class="formLogin">
-                        <input type="text" placeholder="Username or e-mail">
-                        <input type="password" placeholder="Password">
-                        <button>Log In</button>
+                    <form action="/login" method="POST" class="formLogin">
+                        <input type="text" name="user" placeholder="Username or e-mail">
+                        <input type="password" name="password" placeholder="Password">
+                        <button type="submit">Log In</button>
                     </form>
                     <div class="orLine">
                         <svg class="line">
@@ -32,6 +32,11 @@
                             <line x1="0" y1="0" x2="200" y2="0"/>
                         </svg>
                     </div>
+                    <% if (typeof(msg) != 'undefined' && typeof(msg) != null) {%>
+                        <div class="loginError">
+                            <%= msg %>
+                        </div>
+                    <% } %>
                     <a href="/">Forgot Password?</a>                
                 </div>
                 <div class="createAccountContent">
