@@ -1,7 +1,4 @@
-const Sequelize = require('sequelize');
-const config = require('../config/database');
-
-const conection = new Sequelize(config);
+const Login = require('../models/Login')
 
 const loginController = {
     loginAccountForm: (req, res, next) => {
@@ -13,17 +10,13 @@ const loginController = {
         let {
             user,
             password
-        } = req.body;
-        let selectReturn = await conection.query(`SELECT * FROM user WHERE username = :user;`, {
-            replacements: {
-                user
-            },
-            type: Sequelize.QueryTypes.SELECT
-        })
-        if (selectReturn != '') {
-            if (password === selectReturn[0].password) {
+        } = req.body;      
+        let userSelected = await Login.loginAccount(user);
+
+        if (userSelected != '') {
+            if (password === userSelected[0].password) {
                 res.render('profile', {
-                    title: selectReturn[0].fullname + ' (@' + selectReturn[0].username + ')' + ' • not_so_Instagram photos and videos'
+                    title: userSelected[0].fullname + ' (@' + userSelected[0].username + ')' + ' • not_so_Instagram photos and videos'
                 })
             } else {
                 return res.render('login', {
