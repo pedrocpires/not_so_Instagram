@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/signup.css' />
-</head>
+    <%- include('./includes/_head')%>
 
 <body>
     <main>
@@ -32,10 +26,11 @@
         </div>
 
     </main>
-    <footer>
-        <span>© 2020 <a href="/">not_so_Instagram</a> developed by <a href="https://github.com/pedrocpires"
-                target="_blank">Pedro Pires.</a></span>
-    </footer>
+
+    <%- include('./includes/_footer')%>
+    
+    <link rel='stylesheet' href='/stylesheets/signup.css' type="text/css" />
+
 </body>
 
 </html>

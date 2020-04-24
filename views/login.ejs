@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/login.css' />
-</head>
+<%- include('./includes/_head')%>
 
 <body>
     <main>
@@ -25,19 +19,19 @@
                     </form>
                     <div class="orLine">
                         <svg class="line">
-                            <line x1="0" y1="0" x2="200" y2="0"/>
-                          </svg>
+                            <line x1="0" y1="0" x2="200" y2="0" />
+                        </svg>
                         <p>OR</p>
                         <svg class="line">
-                            <line x1="0" y1="0" x2="200" y2="0"/>
+                            <line x1="0" y1="0" x2="200" y2="0" />
                         </svg>
                     </div>
                     <% if (typeof(msg) != 'undefined' && typeof(msg) != null) {%>
-                        <div class="loginError">
-                            <%= msg %>
-                        </div>
+                    <div class="loginError">
+                        <%= msg %>
+                    </div>
                     <% } %>
-                    <a href="/">Forgot Password?</a>                
+                    <a href="/">Forgot Password?</a>
                 </div>
                 <div class="createAccountContent">
                     <p>Don't have an account? <a href="/login/signup">Sign up</a></p>
@@ -46,10 +40,9 @@
         </div>
 
     </main>
-    <footer>
-        <span>© 2020 <a href="/">not_so_Instagram</a> developed by <a href="https://github.com/pedrocpires"
-                target="_blank">Pedro Pires.</a></span>
-    </footer>
+    <%- include('./includes/_footer')%>
+
+    <link rel='stylesheet' href='/stylesheets/login.css' type="text/css" />
 </body>
 
 </html>

@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon bin/www",
+    "preopenDatabase": "chmod +x database/openDatabase.sh",
+    "openDatabase": "sudo ./database/openDatabase.sh",
+    "precommit": "chmod +x script/commit.sh",
+    "commit": "sudo ./script/commit.sh"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

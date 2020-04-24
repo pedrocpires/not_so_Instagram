@@ -10,8 +10,6 @@ const loginController = {
         });
     },
     createAccount: (req, res) => {
-        console.log(req.body)
-        console.log('teste')
         let {
             email,
             fullname,
