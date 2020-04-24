@@ -1,21 +1,23 @@
 # !/bin/bash
 
 username=pedrocpires
-
+echo ""
+echo ""
 echo "Commit automático de todas as alterações de projeto na branch mastes/ commited by $username"
 echo "==========================================================================================="
-echo "Gostaria de continuar [y,n]"
+echo "Gostaria de continuar [y/n]"
 read iniciar
 
 if [ "$iniciar" = "y" ]
 then
     sudo git status
     sudo git add .
+    sudo git status
     echo "Qual a mensagem do commit?"
     read msg
     sudo git commit -m "$msg"
     sudo git pull origin master
     sudo git push origin master
 else
-    exit
+    echo "Saindo do script..."
 fi
