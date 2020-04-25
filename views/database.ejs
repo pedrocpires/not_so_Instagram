@@ -5,7 +5,17 @@
 
 <body>
     <main>
-        <h1>DATABASE</h1>
+        <h1><%= title %></h1>
+        <ul>
+            <% lista.forEach(user => { %>
+                <li>
+                    <%= user.fullname %>
+                </li>
+            <% });%>
+
+
+        </ul>
+        <p><%= lista.nome %></p>
     </main>
     <%- include('./includes/_footer')%>
     <link rel='stylesheet' href='/stylesheets/database.css' type="text/css" />

@@ -1,4 +1,7 @@
-const Login = require('../models/Login')
+const Sequelize = require('sequelize');
+const config = require('../config/database');
+
+const conection = new Sequelize(config);
 
 const loginController = {
     loginAccountForm: (req, res, next) => {
@@ -10,8 +13,13 @@ const loginController = {
         let {
             user,
             password
-        } = req.body;      
-        let userSelected = await Login.loginAccount(user);
+        } = req.body;
+        let userSelected = await conection.query(`SELECT * FROM user WHERE username = :user;`, {
+            type: Sequelize.QueryTypes.SELECT,
+            replacements: {
+                user
+            }
+        });
 
         if (userSelected != '') {
             if (password === userSelected[0].password) {

@@ -82,21 +82,21 @@ $ select * from user;
 ## To do list
 
 - Páginas para serem criadas:
-  [ ] Edição de perfil;
-  [ ] Vizualização de perfil de outro usuário;
-  [ ] Vizualização do Banco de Dados para desenvolvedor;
-  [ ] 
+  - [ ] Edição de perfil;
+  - [ ] Vizualização de perfil de outro usuário;
+  - [ ] Vizualização do Banco de Dados para desenvolvedor;
+  - [ ] 
 
 - Funções para serem implementadas: 
-  [ ] Ambiente de desenvolvedor;
-  [ ] Implementar [faker](https://github.com/Marak/faker.js);
-  [ ] Script em `package.json` para rodar 2 servidores:
-      [ ] Servidor de desenvolvimento;
-      [ ] Servidor de usuário;
-  [ ]
+  - [ ] Ambiente de desenvolvedor;
+  - [ ] Implementar [faker](https://github.com/Marak/faker.js);
+  - [ ] Script em `package.json` para rodar 2 servidores:
+      - [ ] Servidor de desenvolvimento;
+      - [ ] Servidor de usuário;
+  - [ ]
 
 - Tarefas para o Banco de dados;
-  [ ] Finalizar estrutura do Banco de Dados;
-  [ ] Implemetar funções do sequelize;
-  [ ] Salvar banco de dados no [Docker-Hub](https://hub.docker.com/)
-  [ ] 
+  - [ ] Finalizar estrutura do Banco de Dados;
+  - [ ] Implemetar funções do sequelize;
+  - [ ] Salvar banco de dados no [Docker-Hub](https://hub.docker.com/)
+  - [ ] 

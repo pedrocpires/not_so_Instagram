@@ -1,4 +1,7 @@
-const Signup = require('../models/Signup')
+const Sequelize = require('sequelize');
+const config = require('../config/database');
+
+const conection = new Sequelize(config);
 
 const signupController = {
     createAccountForm: (req, res) => {
@@ -13,7 +16,15 @@ const signupController = {
             username,
             password
         } = req.body;
-        Signup.createAccount(email, fullname, username, password);
+        conection.query(`INSERT INTO user (fullname, email, username, password) VALUES (:fullname, :email, :username, :password);`, {
+            replacements: {
+                fullname,
+                email,
+                username,
+                password
+            },
+            type: Sequelize.QueryTypes.INSERT
+        })
         res.render('login',{
             title: 'not_so_Instagram',
             msg: 'Account created successfully. Please login to start.'
