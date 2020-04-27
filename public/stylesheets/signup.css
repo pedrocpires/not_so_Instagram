@@ -126,6 +126,23 @@
     padding: 12px 40px 18px;
 }
 
+.buttonDatabase{
+    max-width: 350px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    padding: 10px 40px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.buttonDatabase button{
+    text-align: right;
+}
 
-  
+.buttonDatabase .btn{
+    margin-bottom: 10px;
+}
+
   

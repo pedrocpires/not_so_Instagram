@@ -4,32 +4,40 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: true,
+            allowNull: false,
             unique: true
         },
         fullname: {
             type: DataTypes.STRING(192),
-            allowNull: true
+            allowNull: false
         },
         email: {
             type: DataTypes.STRING(192),
-            allowNull: true,
+            allowNull: false,
             unique: true
         },
         username: {
             type: DataTypes.STRING(40),
-            allowNull: true,
+            allowNull: false,
             unique: true
         },
         password: {
             type: DataTypes.STRING(192),
-            allowNull: true
+            allowNull: false
         },
         photo_profile: {
             type: DataTypes.STRING(192),
         },
         biography: {
             type: DataTypes.STRING(150),
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            // allowNull: false,
+        },
+        updatedAT: {
+            type: DataTypes.DATE,
+            // allowNull: false,
         }
     }, {
         tableName: 'user',

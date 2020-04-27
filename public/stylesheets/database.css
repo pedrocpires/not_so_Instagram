@@ -1,0 +1,39 @@
+main {
+    margin: 0px auto;
+    padding-top: 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: calc(100vh - 110px);
+}
+
+.tableDatabase {
+    margin: 0px 20px;
+    overflow-y: auto;
+}
+
+.buttonDatabase {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 20px;
+}
+
+.buttonDatabase .btn {
+    margin: 10px;
+}
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.totalUsers {
+    margin: 10px;
+    padding: 0px 20px;
+}
+
+thead tr:first-child * {
+    position: sticky;
+    top: -1px;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./includes/_head')%>
+<%- include('./includes/_head')%>
 
 <body>
     <main>
@@ -17,10 +17,13 @@
                         <input type="password" name="password" placeholder="Password" minlength="8" maxlength="50">
                         <button type="submit">Sign Up</button>
                     </form>
-                    <h4>By signing up, you agree to our Terms , Data Policy and Cookies Policy.</h4>      
+                    <h4>By signing up, you agree to our Terms , Data Policy and Cookies Policy.</h4>
                 </div>
                 <div class="createAccountContent">
                     <p>Have an account? <a href="/login">Log in</a></p>
+                </div>
+                <div class="buttonDatabase">
+                    <%- include('./includes/_buttonDatabase')%>
                 </div>
             </div>
         </div>
@@ -28,8 +31,9 @@
     </main>
 
     <%- include('./includes/_footer')%>
-    
+
     <link rel='stylesheet' href='/stylesheets/signup.css' type="text/css" />
+    <%- include('./includes/_bootstrapScript')%>
 
 </body>
 

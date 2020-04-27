@@ -8,7 +8,9 @@ body * {
     box-sizing: border-box;
     border-collapse: collapse;
 }
-
+th, td, tr{
+    text-align: center;
+}
 ul,
 ol,
 li {

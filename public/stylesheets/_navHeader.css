@@ -1,0 +1,43 @@
+.logo h1{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 20px;
+  }
+  
+  .navConteiner{
+    width: 100%;
+    height: 54px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    border-bottom: 1px solid #dbdbdb;
+    position: fixed;
+    z-index: 2;
+  }
+  
+  .navContent {
+    width: 975px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+  }
+  
+  .searchBar{
+    width: 215px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .navButtons{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navButtonItem{
+    margin-left: 22px;
+  }
+  .navButtonProfile{
+    margin-left: 22px;
+  }
