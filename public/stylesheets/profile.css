@@ -46,6 +46,20 @@ main{
   margin-left: 20px;
 }
 
+.headerInfoProfile #actionButtons button{
+background-color: transparent;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  color: #262626;
+}
+.headerInfoProfile #actionButtons a{
+  margin-left: 20px;
+}
+
 .accountInfos{
   font-size: 16px;
   line-height: 18px;
@@ -104,3 +118,4 @@ main{
   height: 100%;
   object-fit: cover;
 }
+
