@@ -1,7 +1,5 @@
 const Sequelize = require('sequelize');
 const config = require('../config/database');
-const {User} = require('../models');
-
 
 const conection = new Sequelize(config);
 
@@ -16,20 +14,22 @@ const loginController = {
             user,
             password
         } = req.body;
-
-        let userLogged = await User.findOne({
-            where: {
-                username: user
+        let userSelected = await conection.query(`SELECT * FROM user WHERE username = :user;`, {
+            type: Sequelize.QueryTypes.SELECT,
+            replacements: {
+                user
             }
-        })
-        if (userLogged != '') {
-            if (password === userLogged.password) {
-                req.session.user = userLogged;
-                res.redirect('/@' + userLogged.username)
+        });
+
+        if (userSelected != '') {
+            if (password === userSelected[0].password) {
+                res.render('profile', {
+                    title: userSelected[0].fullname + ' (@' + userSelected[0].username + ')' + ' • not_so_Instagram photos and videos'
+                })
             } else {
                 return res.render('login', {
                     title: 'not_so_Instagram',
-                    msg: "Sorry, your password /was incorrect. Please double-check your password."
+                    msg: "Sorry, your password was incorrect. Please double-check your password."
                 })
             }
         } else {

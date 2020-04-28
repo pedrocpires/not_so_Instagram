@@ -2,16 +2,16 @@
     <div class="sectionPhotoProfile">
       <div class="photoProfileConteiner">
         <!-- TODO LIST >> SUBSTITUIR ALT -->
-        <img src="/images/random_avatars/29.jpg" alt="Foto do perfil de <%= user.fullname %>">
+        <img src="/images/random_avatars/29.jpg" alt="Foto do perfil de ...">
       </div>
     </div>
     <section class="sectionInfoProfile">
       <div class="headerInfoProfile">
         <div id="userName">
-          <h2>@<%= user.username %> </h2>
+          <h2>user_name</h2>
         </div>
         <div id="actionButtons">
-          <a href="/accounts/edit"><button type="button">Edit Profile</button></a>
+          <p>Aqui vão alguns botões de ação</p>
         </div>
       </div>
       <div class="accountInfos">
@@ -23,8 +23,10 @@
         </ul>
       </div>
       <div class="descriptionProfile">
-        <h1><%= user.fullname %> </h1>
-        <span><%= user.biography %> </span>
+        <h1>Nome do usuário</h1>
+        <span>Aqui vai ser inserida a descrição que o usuário inserir no perfil.<br>
+          Ele poderá inserir qualquer dado.
+        </span>
       </div>
     </section>
   </header>
