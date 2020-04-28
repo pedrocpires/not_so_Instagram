@@ -1,0 +1,48 @@
+<%- include('./includes/_head')%>
+
+<body>
+    <%- include('./includes/_navHeader')%>
+    <main>
+        <div class="mainConteiner">
+            <div class="menuEdit">
+                    <a href="" class="active">Edit Profile</a>
+                    <a href="">Change Password</a>
+                    <a href="">Log Activity</a>
+            </div>
+            <div class="painelEdit">
+                <div class="headPainel">
+                    <div class="photoProfile">
+                        <img src="/images/random_avatars/29.jpg" alt="">
+                    </div>
+                    <div class="dataProfile">
+                    <h1>pedro.cpires</h1>
+                    <button>Change Profile Photo</button>
+                    </div>
+                </div>
+                <form action="/accounts/edit" method="POST" class="formEdit">
+                    <label for="fullname">Name</label>
+                    <input type="text" id="fullname" name="fullname" minlength="4" maxlength="192" value="<%= user.fullname %>">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" minlength="5" maxlength="40" value="<%= user.username %>">
+                    <label for="website">Websit</label>
+                    <input type="text" id="website" name="website" value="<%= user.website %>">
+                    <label for="biography">Bio</label>
+                    <textarea name="biography" id="biography" maxlength="150"><%= user.biography %></textarea>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" minlength="10" maxlength="192" value="<%= user.email %>">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" value="<%= user.phone %>">
+                    <label for="gender">Gender</label>
+                    <input type="text" id="gender" name="gender" maxlength="20" value="<%= user.gender %>">
+                    <label for=""></label>
+                    <div class="formButtons">
+                        <button type="submit" id="submit">Submit</button>
+                        <button type="button" id="disable">Temporarily disable my account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('./includes/_footer')%>
+</body>
+<link rel='stylesheet' href='/stylesheets/editProfile.css' type="text/css" />

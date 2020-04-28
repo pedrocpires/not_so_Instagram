@@ -21,6 +21,9 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             unique: true
         },
+        phone: {
+            type: DataTypes.STRING(30)
+        },
         password: {
             type: DataTypes.STRING(192),
             allowNull: false
@@ -31,13 +34,19 @@ module.exports = (sequelize, DataTypes) => {
         biography: {
             type: DataTypes.STRING(150),
         },
+        gender: {
+            type:DataTypes.STRING(15)
+        },
+        website: {
+            type:DataTypes.STRING(192)
+        },
         createdAt: {
             type: DataTypes.DATE,
-            // allowNull: false,
+            allowNull: false
         },
-        updatedAT: {
+        updatedAt: {
             type: DataTypes.DATE,
-            // allowNull: false,
+            allowNull: false
         }
     }, {
         tableName: 'user',

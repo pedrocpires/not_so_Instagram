@@ -19,15 +19,6 @@ const signupController = {
             username,
             password
         } = req.body;
-        // conection.query(`INSERT INTO user (fullname, email, username, password) VALUES (:fullname, :email, :username, :password);`, {
-        //     replacements: {
-        //         fullname,
-        //         email,
-        //         username,
-        //         password
-        //     },
-        //     type: Sequelize.QueryTypes.INSERT
-        // })
         User.create({fullname:fullname, email:email, username:username, password:password, createdAt:Sequelize.DATE})
 
         res.render('login', {
