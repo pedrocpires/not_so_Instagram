@@ -3,7 +3,7 @@ var router = express.Router();
 var loginController = require('../controllers/loginController');
 var auth = require('../middlewares/auth')
 
-router.get('/', loginController.loginAccountForm);
-router.post('/', loginController.loginAccount);
+router.get('/', loginController.index);
+router.post('/', loginController.show);
 
 module.exports = router;

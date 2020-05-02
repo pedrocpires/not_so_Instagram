@@ -5,7 +5,7 @@ const faker = require('faker');
 faker.locale = 'en';
 
 const databaseController = {
-    databaseView: async (req, res) => {
+    index: async (req, res) => {
         let usersDatabase = await User.findAndCountAll();
         res.render('database', {
             title: 'Database not_so_Instagram',
@@ -13,7 +13,7 @@ const databaseController = {
             totalUsers: usersDatabase.count
         });
     },
-    fakerCreate: async (req, res) => {
+    create: async (req, res) => {
         const fakeData = faker.helpers.contextualCard();
         const fullname = fakeData.name;
         const email = fakeData.email.toLowerCase();
@@ -28,7 +28,7 @@ const databaseController = {
         })
         res.redirect('/database')
     },
-    truncateTable: async (req, res) => {
+    truncate: async (req, res) => {
         await User.destroy({
             truncate: true
         });
@@ -40,7 +40,7 @@ const databaseController = {
         })
         res.redirect('/database')
     },
-    deleteUser: async (req,res) => {
+    destroy: async (req,res) => {
         let {id} = req.params;
         await User.destroy({
             where: {

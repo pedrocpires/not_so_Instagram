@@ -6,12 +6,12 @@ const {User} = require('../models');
 const conection = new Sequelize(config);
 
 const loginController = {
-    loginAccountForm: (req, res, next) => {
+    index: (req, res) => {
         res.render('login', {
             title: 'not_so_Instagram'
         });
     },
-    loginAccount: async (req, res) => {
+    show: async (req, res) => {
         let {
             user,
             password
@@ -25,11 +25,12 @@ const loginController = {
         if (userLogged != '') {
             if (password === userLogged.password) {
                 req.session.user = userLogged;
-                res.redirect('/@' + userLogged.username)
+                res.cookie('userLogged', userLogged, {maxAge:6000000000})
+                res.redirect('/')
             } else {
                 return res.render('login', {
                     title: 'not_so_Instagram',
-                    msg: "Sorry, your password /was incorrect. Please double-check your password."
+                    msg: "Sorry, your password was incorrect. Please double-check your password."
                 })
             }
         } else {

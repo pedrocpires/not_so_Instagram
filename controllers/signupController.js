@@ -7,12 +7,12 @@ faker.locale = 'en';
 const conection = new Sequelize(config);
 
 const signupController = {
-    createAccountForm: (req, res) => {
+    index: (req, res) => {
         res.render('signup', {
             title: 'not_so_Instagram'
         });
     },
-    createAccount: async (req, res) => {
+    create: async (req, res) => {
         let {
             email,
             fullname,

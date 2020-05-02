@@ -11,6 +11,7 @@ var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');
 var accountRouter = require('./routes/account')
 var databaseRouter = require('./routes/database');
+var cookieMiddleware = require('./middlewares/cookieLogin');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieMiddleware);
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
