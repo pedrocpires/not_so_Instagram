@@ -1,0 +1,46 @@
+<%- include('./includes/_head')%>
+
+<body>
+    <%- include('./includes/_navHeader')%>
+
+    <main>
+        <div class="actionButton">
+            <div class="buttonDatabase">
+                <a class="btn btn-success btn-sm" href="/database/faker">Create new faker account</a>
+                <a class="btn btn-info btn-sm" href="/database">Show all created account</a>
+                <a class="btn btn-danger btn-sm" href="/database/truncate">Delete all created account</a>
+            </div>
+        </div>
+        <div class="tableDatabase">
+            <table class="table force-overflow">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Profile Photo</th>
+                        <th scope="col">Fullname</th>
+                        <th scope="col">Username</th>
+                        <th scope="col"><%- include('../public/images/icons/mais.svg')%></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><%= user.id %></th>
+                        <td><img class="photoProfile" src="../<%= user.photo_profile %>" alt=""></td>
+                        <td><%= user.fullname %></td>
+                        <td><%= user.username %></td>
+                        <td scope="col"><a
+                                href="/database/delete<%=user.id%>"><%- include('../public/images/icons/caixote-de-lixo.svg')%></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    <%- include('./includes/_footer')%>
+    <link rel='stylesheet' href='/stylesheets/databaseUser.css' type="text/css" />
+    <%- include('./includes/_bootstrapScript')%>
+
+
+</body>

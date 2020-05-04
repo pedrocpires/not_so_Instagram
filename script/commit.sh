@@ -2,9 +2,6 @@
 
 username=pedrocpires
 
-cd
-cd desktop/dh/fullStack/not_so_Instagram/
-
 echo ""
 echo ""
 echo "Commit automático de todas as alterações de projeto na branch mastes/ commited by $username"

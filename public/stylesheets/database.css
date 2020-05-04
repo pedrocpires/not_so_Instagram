@@ -37,3 +37,14 @@ thead tr:first-child * {
     position: sticky;
     top: -1px;
 }
+
+.photoProfile{
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+a{
+    line-height: 39px;
+}

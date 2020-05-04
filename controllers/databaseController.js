@@ -13,6 +13,18 @@ const databaseController = {
             totalUsers: usersDatabase.count
         });
     },
+    show: async (req, res) => {
+        let { id } = req.params;
+        let user = await User.findOne({
+            where:{
+                id: id
+            }
+        })
+        res.render('databaseUser', {
+            title: 'Database not_so_Instagram',
+            user: user
+        })
+    },
     create: async (req, res) => {
         const fakeData = faker.helpers.contextualCard();
         const fullname = fakeData.name;

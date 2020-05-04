@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const config = require('../config/database');
+const path = require('path')
 const {
     User
 } = require('../models');
@@ -14,7 +15,15 @@ const accountController = {
         });
     },
     update: async (req, res) => {
-        let {fullname, username, website, biography, email, phone, gender} = req.body;
+        let {
+            fullname,
+            username,
+            website,
+            biography,
+            email,
+            phone,
+            gender
+        } = req.body;
         await User.update({
             fullname: fullname,
             username: username,
@@ -38,6 +47,18 @@ const accountController = {
     logout: (req, res) => {
         req.session.user = undefined;
         res.redirect('/login')
+    },
+    updatePhoto: async (req, res) => {
+        let [profilePhoto] = req.files
+        // console.log(path.join(image))
+        await User.update({
+            photo_profile: path.relative('public/', profilePhoto.path)
+        }, {
+            where: {
+                id: req.session.user.id
+            }
+        })
+        res.redirect('/accounts/edit')
     }
 }
 

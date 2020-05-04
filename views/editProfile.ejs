@@ -12,11 +12,37 @@
             <div class="painelEdit">
                 <div class="headPainel">
                     <div class="photoProfile">
-                        <img src="/images/random_avatars/29.jpg" alt="">
+                        <a href="#" data-toggle="modal" data-target="#modalUpdatePhoto"><img src="/<%= user.photo_profile %>" alt=""></a>
                     </div>
                     <div class="dataProfile">
                     <h1>pedro.cpires</h1>
-                    <button>Change Profile Photo</button>
+                    <button type="button" data-toggle="modal" data-target="#modalUpdatePhoto">
+                        Change Profile Photo
+                    </button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalUpdatePhoto" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePhotoLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h3 class="modal-title" id="modalUpdatePhotoLabel">Charge Profile Photo</h3>
+                            </div>
+                            <form action="/accounts/edit/updatePhoto" enctype="multipart/form-data" method="POST" id="formUpdatePhoto">
+                                <div class="modal-body">
+                                    <label for="updatePhoto" id="btnUpload" >Upload Photo</label>
+                                    <input type="file" name="updatePhoto" id="updatePhoto">
+                                    <input type="submit" id="updatePhoto" value="Send Request">
+                                    <label for="removePhoto" id="btnRemove">Remove Current Photo</label>
+                                    <input type="button" name="removePhoto" id="removePhoto">
+                                    <label for="send" id="btnUpload" >Send Photo</label>
+                                    <input type="submit" id="send" value="Send Request">
+                                    <label for="cancel" id="btnCancel">Cancel</label>
+                                    <input type="button" name="cancel" id="cancel" data-dismiss="modal">
+                                </div>
+                            </form>
+
+                        </div>
+                        </div>
                     </div>
                 </div>
                 <form action="/accounts/edit" method="POST" class="formEdit">
@@ -44,5 +70,6 @@
         </div>
     </main>
     <%- include('./includes/_footer')%>
+    <%- include('./includes/_bootstrapScript')%>
 </body>
 <link rel='stylesheet' href='/stylesheets/editProfile.css' type="text/css" />

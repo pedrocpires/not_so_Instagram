@@ -2,13 +2,13 @@
     <div class="sectionPhotoProfile">
       <div class="photoProfileConteiner">
         <!-- TODO LIST >> SUBSTITUIR ALT -->
-        <img src="/images/random_avatars/29.jpg" alt="Foto do perfil de <%= user.fullname %>">
+        <img src="<%= user.photo_profile %>"  alt="Foto do perfil de <%= user.fullname %>">
       </div>
     </div>
     <section class="sectionInfoProfile">
       <div class="headerInfoProfile">
         <div id="userName">
-          <h2>@<%= user.password %> </h2>
+          <h2>@<%= user.username %> </h2>
         </div>
         <div id="actionButtons">
           <a href="/accounts/edit"><button type="button">Edit Profile</button></a>

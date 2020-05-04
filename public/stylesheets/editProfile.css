@@ -165,3 +165,71 @@ main {
     color: #0095f6;
     font-weight: 600;
 }
+
+.modal-content{
+    width: 400px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 12px;
+}
+
+.modal-header{
+    justify-content: center;
+    margin: 32px 32px 16px 32px;
+    border: 0px;
+    padding: 0px;
+
+}
+
+.modal-header h3{
+    color: #262626;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin: -4px 0px -6px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: 0px;
+    margin-top: 16px;
+}
+
+.modal-body label{
+    background-color: transparent;
+    border-top: 1px solid #dbdbdb;
+    min-height: 48px;
+    padding: 4px 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#btnUpload{
+    color: #0095f6;
+}
+
+#btnRemove{
+    color: #ed4956;
+}
+
+#btnCancel{
+    color: #262626;
+    font-weight: 400;
+}
+
+.custom-file-input{
+    border: 1px solid tomato;
+}
+
+.modal-body input, .modal-body button{
+    display: none;
+}

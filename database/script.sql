@@ -9,31 +9,21 @@ CREATE TABLE if not exists user (
     password VARCHAR(192) NOT NULL,
     photo_profile VARCHAR(192),
     biography VARCHAR(150),
-    create_at DATETIME,
-    update_at DATETIME,
+    created_at DATETIME,
+    updated_at DATETIME,
     PRIMARY KEY (id)    
 );
 
-INSERT INTO user VALUES(
-    null,
-    'Pedro Pires',
-    'pedro@email.com',
-    'pedro',
-    'senha1234',
-    null,
-    null,
-    '2020-04-21',
-    null
+CREATE TABLE if not exists post (
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
+    image_post VARCHAR(192),
+    likes INT NOT NULL,
+    id_user INT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME,
+    FOREIGN KEY (id_user) REFERENCES user(id),
+    PRIMARY KEY (id)    
 );
 
-INSERT INTO user VALUES(
-    null,
-    'Viniciu Ravelli',
-    'vinicius@email.com',
-    'vinicius',
-    'senha1234',
-    null,
-    null,
-    '2020-04-21',
-    null
-);
+ALTER TABLE post
+MODIFY image_post VARCHAR(192) NOT NULL UNIQUE;
