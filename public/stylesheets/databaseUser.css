@@ -34,8 +34,8 @@ thead tr:first-child * {
 }
 
 .photoProfile{
-    width: 38px;
-    height: 38px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border-radius: 50%;
 }

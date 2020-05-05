@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const config = require('../config/database');
 const path = require('path')
 const {
-    User
+    User, Post
 } = require('../models');
 
 const conection = new Sequelize(config);
@@ -50,7 +50,6 @@ const accountController = {
     },
     updatePhoto: async (req, res) => {
         let [profilePhoto] = req.files
-        // console.log(path.join(image))
         await User.update({
             photo_profile: path.relative('public/', profilePhoto.path)
         }, {
@@ -59,6 +58,23 @@ const accountController = {
             }
         })
         res.redirect('/accounts/edit')
+    },
+    showNewPost: (req, res) => {
+        res.render('newpost', {
+            title: 'New Post • not_so_Instagram',
+            user: req.session.user
+        })
+    },
+    createNewPost: async (req, res, next) => {
+        let [photo] = req.files;
+        let {caption} = req.body;
+        await Post.create({
+            image_post: path.relative('public/', photo.path),
+            likes: 0,
+            caption: caption,
+            id_user: req.session.user.id
+        })
+        res.redirect('/')
     }
 }
 

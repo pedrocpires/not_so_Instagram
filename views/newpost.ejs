@@ -1,0 +1,34 @@
+<%- include('./includes/_head')%>
+
+<body>
+    <%- include('./includes/_navHeader')%>
+    <main>
+        <div class="mainConteiner">
+            <div class="painel">
+                <div class="headPainel">
+                    <div class="photoProfile">
+                        <img src="/<%= user.photo_profile %>" alt="">
+                    </div>
+                    <div class="dataProfile">
+                    <h1>pedro.cpires</h1>
+                    </div>
+                </div>
+                <form action="/accounts/newpost" method="POST" class="formEdit"  enctype="multipart/form-data">
+                    <label for="photo">Photo</label>
+                    <input type="file" id="photo" name="photo" minlength="4" maxlength="192" placeholder="Select a photo for post . . .">
+                    <label for="caption">Caption</label>
+                    <textarea name="caption" id="caption" maxlength="150" placeholder="Write a Caption . . ."></textarea>
+                    <label for=""></label>
+                    <div class="formButtons">
+                        <button type="submit" id="submit">New Post</button>
+                        <a href="/"><button type="button" id="cancel">Cancel</button></a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('./includes/_footer')%>
+    <%- include('./includes/_bootstrapScript')%>
+</body>
+<link rel='stylesheet' href='/stylesheets/newpost.css' type="text/css" />

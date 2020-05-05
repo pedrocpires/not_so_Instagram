@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 const config = require('../config/database');
-const {User} = require('../models');
+const {
+    User
+} = require('../models');
 const faker = require('faker');
 faker.locale = 'en';
 
@@ -19,7 +21,13 @@ const signupController = {
             username,
             password
         } = req.body;
-        User.create({fullname:fullname, email:email, username:username, password:password, createdAt:Sequelize.DATE})
+        User.create({
+            fullname: fullname,
+            email: email,
+            username: username,
+            password: password,
+            createdAt: Sequelize.DATE
+        })
 
         res.render('login', {
             title: 'not_so_Instagram',
@@ -33,7 +41,12 @@ const signupController = {
         const username = fakeData.username.toLowerCase();
         const password = faker.internet.password();
 
-        User.create({fullname:fullname, email:email, username:username, password:password})
+        User.create({
+            fullname: fullname,
+            email: email,
+            username: username,
+            password: password
+        })
         res.redirect('/signup');
     }
 }

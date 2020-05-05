@@ -7,5 +7,7 @@ router.get('/edit', accountController.index);
 router.post('/edit', accountController.update);
 router.get('/logout', accountController.logout);
 router.post('/edit/updatePhoto', upload.any(), accountController.updatePhoto);
+router.get('/newpost', accountController.showNewPost);
+router.post('/newpost', upload.any(), accountController.createNewPost);
 
 module.exports = router;

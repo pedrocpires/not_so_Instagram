@@ -27,3 +27,16 @@ CREATE TABLE if not exists post (
 
 ALTER TABLE post
 MODIFY image_post VARCHAR(192) NOT NULL UNIQUE;
+
+ALTER TABLE post
+CHANGE created_at createdAt DATETIME;
+
+ALTER TABLE post
+CHANGE updated_at updatedAt DATETIME;
+
+ALTER TABLE post
+ADD caption VARCHAR(150);
+
+ALTER TABLE post
+MODIFY caption VARCHAR(150)
+AFTER likes;

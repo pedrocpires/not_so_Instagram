@@ -1,0 +1,200 @@
+main {
+    padding-top: 54px;
+}
+
+.mainConteiner {
+    width: 100%;
+    max-width: 935px;
+    margin: 30px auto;
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+.painel {
+    background-color: #ffffff;
+    flex: 1 1 400px;
+    min-width: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headPainel {
+    width: 100%;
+    display: flex;
+    margin-top: 32px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.photoProfile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 32px;
+    flex: 0 0 194px;
+}
+
+.photoProfile img {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.dataProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 1 355px;
+}
+
+.dataProfile h1 {
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+
+.formEdit {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 16px 0px;
+}
+
+.formEdit label {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 32px;
+    flex: 0 0 194px;
+    text-align: right;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    height: 32px;
+    margin-bottom: 16px;
+}
+
+.formEdit input {
+    border: 1px solid #dbdbdb;
+    height: 32px;
+    background-color: transparent;
+    border-radius: 3px;
+    display: flex;
+    flex: 0 1 615px;
+    margin-bottom: 16px;
+    padding: 0px 10px;
+}
+
+.formEdit textarea {
+    border: 1px solid #dbdbdb;
+    height: 90px;
+    background-color: transparent;
+    border-radius: 3px;
+    display: flex;
+    flex: 0 1 615px;
+    margin-bottom: 16px;
+    resize: vertical;
+    padding: 5px 10px;
+}
+
+.formEdit div {
+    height: 32px;
+    display: flex;
+    flex: 0 1 615px;
+    margin-bottom: 16px;
+    justify-content: space-around;
+    align-self: flex-end;
+}
+
+
+.formEdit div #submit {
+    background-color: #0093f5cc;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 5px 9px;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    width: 120px;
+    justify-content: center;
+}
+
+.formEdit div #cancel {
+    background-color: #ED4C56;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 5px 9px;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    width: 120px;
+    justify-content: center;
+}
+
+.formEdit div a {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content{
+    width: 400px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 12px;
+}
+
+.modal-header{
+    justify-content: center;
+    margin: 32px 32px 16px 32px;
+    border: 0px;
+    padding: 0px;
+
+}
+
+.modal-header h3{
+    color: #262626;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin: -4px 0px -6px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: 0px;
+    margin-top: 16px;
+}
+
+.modal-body label{
+    background-color: transparent;
+    border-top: 1px solid #dbdbdb;
+    min-height: 48px;
+    padding: 4px 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.custom-file-input{
+    border: 1px solid tomato;
+}
+
+.modal-body input, .modal-body button{
+    display: none;
+}

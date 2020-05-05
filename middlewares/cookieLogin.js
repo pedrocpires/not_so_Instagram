@@ -15,12 +15,7 @@ const cookieLogin = async (req, res, next) => {
         if (userLogged != '') {
             if (req.cookies.userLogged.password === userLogged.password) {
                 req.session.user = userLogged;
-                // res.redirect('/')
-            // } else {
-            //     return res.redirect('/')
             }
-        // } else {
-        //     return res.redirect('/')
         }
     }
     

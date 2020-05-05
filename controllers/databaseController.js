@@ -7,10 +7,12 @@ faker.locale = 'en';
 const databaseController = {
     index: async (req, res) => {
         let usersDatabase = await User.findAndCountAll();
+        console.log(req.session.user.photo_profile)
         res.render('database', {
             title: 'Database not_so_Instagram',
             usersDatabase: usersDatabase.rows,
-            totalUsers: usersDatabase.count
+            totalUsers: usersDatabase.count,
+            user: req.session.user
         });
     },
     show: async (req, res) => {

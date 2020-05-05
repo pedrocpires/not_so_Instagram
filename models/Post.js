@@ -16,6 +16,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        caption: {
+            type: DataTypes.STRING,
+        },
+        id_user: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         createdAt: {
             type: DataTypes.DATE,
             allowNull: false
@@ -28,6 +35,13 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'post',
         timestamps: true
     });
+
+    Post.associate = (models) => {
+        Post.belongsTo(models.User, {
+            foreignKey: 'id_user',
+            as: 'user'
+        })
+    }
 
     return Post;
 };

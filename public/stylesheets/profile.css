@@ -106,6 +106,7 @@ background-color: transparent;
 .post{
   width: calc((100% - 56px)/3);
   height: 291px;
+  height: 1fr;
   margin-bottom: 28px;
 }
 
