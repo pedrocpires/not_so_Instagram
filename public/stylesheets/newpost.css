@@ -127,7 +127,7 @@ main {
 }
 
 .formEdit div #cancel {
-    background-color: #ED4C56;
+    background-color: #ED5C73;
     border-radius: 4px;
     color: #ffffff;
     font-weight: 600;
@@ -189,10 +189,6 @@ main {
     line-height: 40px;
     vertical-align: middle;
     cursor: pointer;
-}
-
-.custom-file-input{
-    border: 1px solid tomato;
 }
 
 .modal-body input, .modal-body button{

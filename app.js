@@ -11,6 +11,7 @@ var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');
 var accountRouter = require('./routes/account')
 var databaseRouter = require('./routes/database');
+var postRouter = require('./routes/post')
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
 var app = express();
@@ -37,6 +38,7 @@ app.use('/signup', signupRouter);
 app.use('/@:user', userRouter);
 app.use('/accounts', accountRouter); 
 app.use('/database', databaseRouter);
+app.use('/post', postRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

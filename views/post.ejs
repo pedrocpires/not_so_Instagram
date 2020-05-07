@@ -1,0 +1,40 @@
+<%- include('./includes/_head')%>
+
+<body>
+    <%- include('./includes/_navHeader')%>
+    <main>
+        <div class="mainConteiner">
+            <div class="postConteiner">
+                <div class="imagePost">
+                    <img src="/<%= post.image_post %> ">
+                </div>
+                <div class="painelPost">
+                    <div class="headPainel">
+                        <div class="photoProfile">
+                            <a href="/@<%= user.username %>"><img src="/<%= user.photo_profile %>" alt=""></a>
+                        </div>
+                        <div class="dataProfile">
+                            <!-- IMPLEMENTAR BOTÂO DE FOLLOW -->
+                            <h1> <%= user.username %> • <a href="#">Follow</a></h1>
+                        </div>
+                    </div>
+                    <div class="commentsPainel">
+
+                    </div>
+                    <div class="actionButtons">
+                        
+                    </div>
+                    <div class="likesCount">
+
+                    </div>
+                    <div class="comment">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('./includes/_footer')%>
+    <%- include('./includes/_bootstrapScript')%>
+</body>
+<link rel='stylesheet' href='/stylesheets/post.css' type="text/css" />

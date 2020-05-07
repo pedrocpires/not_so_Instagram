@@ -58,24 +58,6 @@ const accountController = {
             }
         })
         res.redirect('/accounts/edit')
-    },
-    showNewPost: (req, res) => {
-        res.render('newpost', {
-            title: 'New Post • not_so_Instagram',
-            user: req.session.user
-        })
-    },
-    createNewPost: async (req, res, next) => {
-        let [photo] = req.files;
-        let {caption} = req.body;
-        await Post.create({
-            image_post: path.relative('public/', photo.path),
-            likes: 0,
-            caption: caption,
-            id_user: req.session.user.id
-        })
-        res.redirect('/')
     }
 }
-
 module.exports = accountController;

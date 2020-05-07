@@ -1,13 +1,7 @@
 <div class="feed">
     <% posts.forEach( post => { %>
-        <div class="post"><img src="<%= post.image_post %> "></div>
+        <div class="post">
+            <a href="/post/<%= post.id %>"><img src="<%= post.image_post %> "></a>
+        </div>
     <% }) %> 
-    
-    
-    <!-- <div class="post"><img src="/images/random_pic_post/15.jpg"></div>
-    <div class="post"><img src="/images/random_pic_post/16.jpg"></div>
-    <div class="post"><img src="/images/random_pic_post/9.jpg"></div>
-    <div class="post"><img src="/images/random_pic_post/7.jpg"></div>
-    <div class="post"><img src="/images/random_pic_post/13.jpg"></div>
-    <div class="post"><img src="/images/random_pic_post/12.jpg"></div> -->
 </div>

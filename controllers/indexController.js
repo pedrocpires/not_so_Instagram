@@ -16,10 +16,9 @@ const indexController = {
             include: {
                 model: User,
                 as: 'user',
-                require: false
+                require: true
             }
         });
-        console.log(posts)
         res.render('profile', {
             title: fullname + ' (@' + username + ') • not_so_Instagram',
             user: req.session.user,
