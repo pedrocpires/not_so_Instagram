@@ -82,26 +82,32 @@ $ select * from user;
 ## To do list
 
 - Páginas para serem criadas:
-  - [ ] Edição de perfil;
+  - [x] Edição de perfil;
   - [ ] Edição de senha do usuário;
   - [ ] Vizualização de perfil de outro usuário;
   - [x] Vizualização do Banco de Dados para desenvolvedor;
-  - [ ] Criação de nova publicação;
-  - [ ] Vizualização de publicação;
+  - [x] Criação de nova publicação;
+  - [x] Vizualização de publicação;
 
 - Funções para serem implementadas: 
   - [ ] Ambiente de desenvolvedor;
    - [ ] Criação de menu lateral para funções de desenvolvedor;
   - [x] Implementar [faker](https://github.com/Marak/faker.js);
-    - [ ] Criar estrutura para faker post;
-    - [ ] Criar estrutura para faker like;
-    - [ ] Criar estrutura para faker comment;
+    - [ ] Criar script para faker post;
+    - [ ] Criar script para faker like;
+    - [ ] Criar script para faker comment;
+    - [ ] Criar script para faker login;
+    - [ ] Criar script para faker signUp;
+    - [ ] Criar script para faker follow;
   - [ ] Script em `package.json` para rodar 2 servidores:
       - [ ] Servidor de desenvolvimento;
       - [ ] Servidor de usuário;
-  - [ ]Implementação de likes e comentários;
+  - [ ] Implementação de likes;
+  - [x] Implementação de comments;
+  - [ ] Implementação de followers;
+  - [ ] Criação do feed de post vizualizando os following's
 
 - Tarefas para o Banco de dados;
-  - [ ] Finalizar estrutura do Banco de Dados;
+  - [ ] Finalizar script do Banco de Dados;
   - [x] Implemetar funções do sequelize;
   - [ ] Salvar banco de dados no [Docker-Hub](https://hub.docker.com/)
