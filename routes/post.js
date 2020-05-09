@@ -8,4 +8,5 @@ router.post('/newpost', upload.any(), postController.store);
 router.get('/:id', postController.index);
 
 
+
 module.exports = router;

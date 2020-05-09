@@ -101,6 +101,8 @@ background-color: transparent;
 .feed{
   display: flex;
   flex-wrap: wrap;
+  padding-top: 53px;
+  border-top: 1px solid #dbdbdb;
 }
 
 .post{

@@ -11,24 +11,67 @@
                 <div class="painelPost">
                     <div class="headPainel">
                         <div class="photoProfile">
-                            <a href="/@<%= user.username %>"><img src="/<%= user.photo_profile %>" alt=""></a>
+                            <a href="/@<%= post.user.username %>"><img src="/<%= post.user.photo_profile %>" alt=""></a>
                         </div>
                         <div class="dataProfile">
                             <!-- IMPLEMENTAR BOTÂO DE FOLLOW -->
-                            <h1> <%= user.username %> • <a href="#">Follow</a></h1>
+                            <h1> <%= user.username %> •
+                                <!-- <a href="#">Follow</a></h1> -->
                         </div>
                     </div>
                     <div class="commentsPainel">
-
+                        <ul>
+                            <li>
+                                <div class="comment">
+                                    <img src="/<%= post.user.photo_profile %> " alt="">
+                                    <span>
+                                        <h3> <%= post.user.username%>  </h3> <%= post.caption %>
+                                    </span>
+                                    <ul>
+                                        <li>3w</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <% post.comment.forEach(comment => { %>
+                            <li>
+                                <div class="comment">
+                                    <img src="/<%= comment.user.photo_profile %> " alt="">
+                                    <span>
+                                        <h3> <%= comment.user.username %>  </h3> <%= comment.comment %>
+                                    </span>
+                                    <ul>
+                                        <li>3w</li>
+                                        <li><% if (comment.likes == 1 ) { %>
+                                            <%= comment.likes %> like
+                                        <% } else if (comment.likes > 1) {%>
+                                            <%= comment.likes %> likes
+                                        <% } %>  
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <% }); %> 
+                        </ul>
                     </div>
                     <div class="actionButtons">
-                        
+                        <a href="/"><%- include('../public/images/icons/like.svg')%></a>
+                        <a href="/"><%- include('../public/images/icons/comment.svg')%></a>
                     </div>
                     <div class="likesCount">
-
+                        <img src="/<%= user.photo_profile %>" alt="">
+                        <p>Liked by <span>Someone</span> and <span>1,204 others</span></p>
                     </div>
-                    <div class="comment">
-
+                    <div class="datePost">
+                        <p>april 24</p>
+                    </div>
+                    <div class="commentForm">
+                        <form action="/comment/<%= post.id %> " method="POST">
+                            <textarea wrap="off" maxlength="150" name="comment" id="comment"
+                                placeholder="Add a comment..."></textarea>
+                            <input type="text" name="id_post" id="id_post" value="<%= post.id %>" hidden>
+                            <input type="text" name="id_user" id="id_user" value="<%= user.id %>" hidden>
+                            <button type="submit">Post</button>
+                        </form>
                     </div>
                 </div>
             </div>

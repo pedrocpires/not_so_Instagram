@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const config = require('../config/database');
 const path = require('path')
 const {
-    User, Post
+    User, Post, Comment
 } = require('../models');
 
 const conection = new Sequelize(config);
@@ -10,23 +10,31 @@ const conection = new Sequelize(config);
 const postController = {
     index: async (req, res) => {
         let {id} = req.params;
-        console.log(id)
         let post = await Post.findOne({
             where: {
                 id: id
             },
-            include: {
+            include: [{
                 model: User,
                 as: 'user',
-                require: false
+                require: true
+            },{
+                model: Comment,
+                as: 'comment',
+                require: true,
+                include: {
+                    model: User,
+                    as: 'user',
+                    require: true
+                }
             }
+        ]
         })
-        console.log(post)
-
         res.render('post', {
             title: 'Post by: ' + req.session.user.username + ' • not_so_Instagram',
             user: req.session.user,
-            post: post
+            post: post,
+            
         });
     },
     create: (req, res) => {

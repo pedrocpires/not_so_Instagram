@@ -40,3 +40,24 @@ ADD caption VARCHAR(150);
 ALTER TABLE post
 MODIFY caption VARCHAR(150)
 AFTER likes;
+
+CREATE TABLE if not exists comment (
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
+	comment VARCHAR(150) NOT NULL,
+	id_user INT NOT NULL,
+	id_post INT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME,
+    FOREIGN KEY (id_user) REFERENCES user(id),
+    FOREIGN KEY (id_post) REFERENCES post(id),
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE comment 
+ADD likes INT NOT NULL AFTER comment;
+
+ALTER TABLE comment
+CHANGE created_at createdAt DATETIME;
+
+ALTER TABLE comment
+CHANGE updated_at updatedAt DATETIME;

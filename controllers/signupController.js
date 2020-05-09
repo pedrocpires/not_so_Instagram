@@ -34,14 +34,14 @@ const signupController = {
             msg: 'Account created successfully. Please login to start.'
         });
     },
-    fakerCreate: (req, res) => {
+    fakerCreate: async (req, res) => {
         const fakeData = faker.helpers.contextualCard();
         const fullname = fakeData.name;
         const email = fakeData.email.toLowerCase();
         const username = fakeData.username.toLowerCase();
         const password = faker.internet.password();
 
-        User.create({
+        await User.create({
             fullname: fullname,
             email: email,
             username: username,

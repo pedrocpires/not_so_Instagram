@@ -12,6 +12,7 @@ var signupRouter = require('./routes/signup');
 var accountRouter = require('./routes/account')
 var databaseRouter = require('./routes/database');
 var postRouter = require('./routes/post')
+var commentRouter = require('./routes/comment')
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
 var app = express();
@@ -39,6 +40,7 @@ app.use('/@:user', userRouter);
 app.use('/accounts', accountRouter); 
 app.use('/database', databaseRouter);
 app.use('/post', postRouter)
+app.use('/comment', commentRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
