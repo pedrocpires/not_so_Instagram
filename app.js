@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var methodOverride = require('method-override');
+
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
@@ -11,8 +13,9 @@ var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');
 var accountRouter = require('./routes/account')
 var databaseRouter = require('./routes/database');
-var postRouter = require('./routes/post')
-var commentRouter = require('./routes/comment')
+var postRouter = require('./routes/post');
+var commentRouter = require('./routes/comment');
+var followRouter = require('./routes/follow')
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
 var app = express();
@@ -32,15 +35,16 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieMiddleware);
+app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
-app.use('/@:user', userRouter);
 app.use('/accounts', accountRouter); 
 app.use('/database', databaseRouter);
-app.use('/post', postRouter)
-app.use('/comment', commentRouter)
+app.use('/post', postRouter);
+app.use('/comment', commentRouter);
+app.use('/follow', followRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

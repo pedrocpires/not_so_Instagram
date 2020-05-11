@@ -10,18 +10,15 @@
         <div id="userName">
           <h2>@<%= user.username %> </h2>
         </div>
-        <div id="actionButtons">
-          <a href="/accounts/edit"><button type="button">Edit Profile</button></a>
-          <a href="/post/newpost"><button type="button">New Post</button></a>
-          <a href="/accounts/logout"><button type="button">Logout</button></a>
-        </div>
+        <%- include('_profileActionButtons')%>
+
       </div>
       <div class="accountInfos">
         <ul>
           <!-- TODO LIST >> INSERIR DATA ACCOUNT -->
           <li><span><span id="dataAccount"><%= posts.length %> </span> posts</span></li>
-          <li><span><span id="dataAccount">509</span> followers</span></li>
-          <li><span><span id="dataAccount">399</span> following</span></li>
+          <li><span><span id="dataAccount"><%= followers.count %> </span> followers</span></li>
+          <li><span><span id="dataAccount"><%= following.count %></span> following</span></li>
         </ul>
       </div>
       <div class="descriptionProfile">

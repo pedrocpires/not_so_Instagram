@@ -2,8 +2,6 @@ const Sequelize = require('sequelize');
 const config = require('../config/database');
 const {User} = require('../models');
 
-const conection = new Sequelize(config);
-
 
 const cookieLogin = async (req, res, next) => {
     if (req.cookies.userLogged != undefined && req.session.user == undefined){

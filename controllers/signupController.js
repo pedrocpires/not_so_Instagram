@@ -26,7 +26,6 @@ const signupController = {
             email: email,
             username: username,
             password: password,
-            createdAt: Sequelize.DATE
         })
 
         res.render('login', {
@@ -45,7 +44,8 @@ const signupController = {
             fullname: fullname,
             email: email,
             username: username,
-            password: password
+            password: password,
+            photo_profile: 'images/profilePhotos/defaultProfilePhoto.jpg'
         })
         res.redirect('/signup');
     }

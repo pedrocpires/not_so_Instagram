@@ -32,10 +32,14 @@
                                     <label for="updatePhoto" id="btnUpload" >Upload Photo</label>
                                     <input type="file" name="updatePhoto" id="updatePhoto">
                                     <input type="submit" id="updatePhoto" value="Send Request">
-                                    <label for="removePhoto" id="btnRemove">Remove Current Photo</label>
-                                    <input type="button" name="removePhoto" id="removePhoto">
                                     <label for="send" id="btnUpload" >Send Photo</label>
                                     <input type="submit" id="send" value="Send Request">
+                                </div>
+                            </form>
+                            <form action="/accounts/edit/updatePhoto?_method=DELETE" method="POST" id="formDeletePhoto">
+                                <div class="modal-body">
+                                    <label for="removePhoto" id="btnRemove">Remove Current Photo</label>
+                                    <input type="submit" name="removePhoto" id="removePhoto">
                                     <label for="cancel" id="btnCancel">Cancel</label>
                                     <input type="button" name="cancel" id="cancel" data-dismiss="modal">
                                 </div>
@@ -45,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="/accounts/edit" method="POST" class="formEdit">
+                <form action="/accounts/edit?_method=PUT" method="POST" class="formEdit">
                     <label for="fullname">Name</label>
                     <input type="text" id="fullname" name="fullname" minlength="4" maxlength="192" value="<%= user.fullname %>">
                     <label for="username">Username</label>

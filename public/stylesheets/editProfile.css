@@ -175,7 +175,7 @@ main {
 
 .modal-header{
     justify-content: center;
-    margin: 32px 32px 16px 32px;
+    margin: 32px;
     border: 0px;
     padding: 0px;
 
@@ -197,7 +197,6 @@ main {
     flex-direction: column;
     padding: 0;
     border: 0px;
-    margin-top: 16px;
 }
 
 .modal-body label{

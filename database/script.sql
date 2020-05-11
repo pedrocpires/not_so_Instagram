@@ -1,4 +1,4 @@
-create database if not exists not_so_instagram;
+create database IF not exists not_so_instagram;
 use not_so_instagram;
 
 CREATE TABLE if not exists user (
@@ -9,55 +9,55 @@ CREATE TABLE if not exists user (
     password VARCHAR(192) NOT NULL,
     photo_profile VARCHAR(192),
     biography VARCHAR(150),
-    created_at DATETIME,
-    updated_at DATETIME,
+    createdAt DATETIME,
+    updatedAt DATETIME,
     PRIMARY KEY (id)    
 );
 
 CREATE TABLE if not exists post (
     id INT AUTO_INCREMENT NOT NULL UNIQUE,
-    image_post VARCHAR(192),
+    image_post VARCHAR(192) NOT NULL UNIQUE,
     likes INT NOT NULL,
+    caption VARCHAR(150),
     id_user INT NOT NULL,
-    created_at DATETIME,
-    updated_at DATETIME,
+    createdAt DATETIME,
+    updatedAt DATETIME,
     FOREIGN KEY (id_user) REFERENCES user(id),
     PRIMARY KEY (id)    
 );
 
-ALTER TABLE post
-MODIFY image_post VARCHAR(192) NOT NULL UNIQUE;
-
-ALTER TABLE post
-CHANGE created_at createdAt DATETIME;
-
-ALTER TABLE post
-CHANGE updated_at updatedAt DATETIME;
-
-ALTER TABLE post
-ADD caption VARCHAR(150);
-
-ALTER TABLE post
-MODIFY caption VARCHAR(150)
-AFTER likes;
-
 CREATE TABLE if not exists comment (
     id INT AUTO_INCREMENT NOT NULL UNIQUE,
 	comment VARCHAR(150) NOT NULL,
+    likes INT NOT NULL,
 	id_user INT NOT NULL,
 	id_post INT NOT NULL,
-    created_at DATETIME,
-    updated_at DATETIME,
+    createdAt DATETIME,
+    updatedAt DATETIME,
     FOREIGN KEY (id_user) REFERENCES user(id),
     FOREIGN KEY (id_post) REFERENCES post(id),
     PRIMARY KEY (id)
 );
 
-ALTER TABLE comment 
-ADD likes INT NOT NULL AFTER comment;
+CREATE TABLE if not exists post_like (
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
+	id_post INT NOT NULL,
+    id_user INT NOT NULL,
+    createdAt DATETIME,
+    updatedAt DATETIME,
+    FOREIGN KEY (id_post) REFERENCES post(id),
+    FOREIGN KEY (id_user) REFERENCES user(id),
+    PRIMARY KEY (id)
+);
 
-ALTER TABLE comment
-CHANGE created_at createdAt DATETIME;
+CREATE TABLE if not exists follow (
+    id INT AUTO_INCREMENT NOT NULL UNIQUE,
+	id_user INT NOT NULL,
+    id_follower INT NOT NULL,
+    createdAt DATETIME,
+    updatedAt DATETIME,
+    FOREIGN KEY (id_user) REFERENCES user(id),
+    FOREIGN KEY (id_follower) REFERENCES user(id),
+    PRIMARY KEY (id)
+);
 
-ALTER TABLE comment
-CHANGE updated_at updatedAt DATETIME;

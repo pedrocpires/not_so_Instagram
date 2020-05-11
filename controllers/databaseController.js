@@ -37,7 +37,8 @@ const databaseController = {
             fullname: fullname,
             email: email,
             username: username,
-            password: password
+            password: password,
+            photo_profile: 'images/profilePhotos/defaultProfilePhoto.jpg'
         })
         res.redirect('/database')
     },

@@ -53,5 +53,18 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
     });
 
+    // User.associate = (models) =>{
+    //     User.belongsToMany(models.User, {
+    //         foreignKey: 'id_followed',
+    //         as: 'user_followed',
+    //         through: models.Follow
+    //     });
+    //     User.belongsToMany(models.User, {
+    //         foreignKey: 'id_follower',
+    //         as: 'user_follower',
+    //         through: models.Follow
+    //     })
+    // }
+
     return User;
 };

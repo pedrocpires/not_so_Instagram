@@ -1,6 +1,7 @@
 function auth(req, res, next) {
-    if (typeof (req.session.user) != 'undefined') {
+    if (req.session.user != undefined) {
         if (req.path == '/'){
+            console.log('Passou aqui')
             next()
         } else {
             return res.redirect('/')

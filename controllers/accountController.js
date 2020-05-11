@@ -46,6 +46,7 @@ const accountController = {
     },
     logout: (req, res) => {
         req.session.user = undefined;
+        req.cookies.userLogged = undefined;
         res.redirect('/login')
     },
     updatePhoto: async (req, res) => {
@@ -57,6 +58,24 @@ const accountController = {
                 id: req.session.user.id
             }
         })
+        req.session.user = await User.findOne({
+            where: {
+                id: req.session.user.id
+            }});
+        res.redirect('/accounts/edit')
+    },
+    deletePhoto: async (req, res) => {
+        await User.update({
+            photo_profile: 'images/profilePhotos/defaultProfilePhoto.jpg'
+        }, {
+            where: {
+                id: req.session.user.id
+            }
+        });
+        req.session.user = await User.findOne({
+            where: {
+                id: req.session.user.id
+            }});
         res.redirect('/accounts/edit')
     }
 }

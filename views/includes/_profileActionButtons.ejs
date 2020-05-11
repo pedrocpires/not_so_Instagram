@@ -1,0 +1,25 @@
+<% switch (flw) {
+    case 999: %>
+        <div id="actionButtons">
+            <a href="/accounts/edit"><button type="button">Edit Profile</button></a>
+            <a href="/post/newpost"><button type="button">New Post</button></a>
+            <a href="/accounts/logout"><button type="button">Logout</button></a>
+        </div>
+        <% break%>
+    <% case 1: %>
+        <div id="actionButtons">
+            <form action="/follow/unfollow" method="POST">
+                <button type="submit">UnFollow</button>
+                <input type="text" name="id_followed" id="id_followed" value="<%= user.id %>" hidden>
+            </form>
+        </div>
+        <% break%>
+    <% case 0: %>
+        <div id="actionButtons">
+            <form action="/follow" method="POST">
+                <button type="submit" style="background-color: #0195F6; color: #FFFFFF;">Follow</button>
+                <input type="text" name="id_followed" id="id_followed" value="<%= user.id %>" hidden>
+            </form>
+        </div>
+        <% break%>
+<% } %> 
