@@ -34,7 +34,6 @@ const postController = {
             title: 'Post by: ' + req.session.user.username + ' • not_so_Instagram',
             user: req.session.user,
             post: post,
-            
         });
     },
     create: (req, res) => {

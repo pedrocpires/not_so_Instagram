@@ -96,7 +96,6 @@ const indexController = {
                 flw = 0;
             }
         };
-        console.log(flw)
         res.render('profile', {
             title: user.fullname + ' (@' + username + ') • not_so_Instagram',
             user: user,

@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 const config = {
-    host:'172.18.0.2',
-    port: 3306,
-    dialect:'mysql',
-    database:'not_so_instagram',
-    username:'root',
-    password:'root'
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_DIALECT,
+    database: process.env.DB_DATABASE,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
 }
 
 module.exports = config;

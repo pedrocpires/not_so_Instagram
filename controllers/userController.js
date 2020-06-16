@@ -8,10 +8,6 @@ const userController = {
     index: (req, res) => {
         let {id} = req.params;
 
-        console.log(req.params)
-        console.log(id)
-        console.log('Chega na rota')
-
         // let user = await User.findOne({
         //     where: {
         //         username: username
